@@ -8,7 +8,8 @@ interface CardProps {
 
 const Card = ({ data }: CardProps) => {
   if (!data) return <NotFound />;
-  const { image, username, createdAt, bio } = data;
+  const { image, username, createdAt, bio, publicRepos, followers, following } =
+    data;
   return (
     <div className="flex flex-col gap-5 p-5 rounded-md bg-primary-100">
       <div className="flex gap-4">
@@ -19,7 +20,11 @@ const Card = ({ data }: CardProps) => {
         </div>
       </div>
       <p>{bio}</p>
-      <Display />
+      <Display
+        publicRepos={publicRepos}
+        followers={followers}
+        following={following}
+      />
     </div>
   );
 };

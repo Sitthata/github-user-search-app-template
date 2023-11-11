@@ -2,23 +2,33 @@ import Card from "./components/Card";
 import NavBar from "./components/NavBar";
 import SearchBox from "./components/SearchBox";
 import { useState } from "react";
+import { CardType } from "./types/cardType";
 
 function App() {
   const [username, setUsername] = useState("");
-  // const [data, setData] = useState<CardType | null>(null);
+  const [data, setData] = useState<CardType | null>(null);
 
-  const fetchUser = () => {
-    // Fetch user data from GitHub API
-  };
-
-  const data = {
-    image: "https://avatars.githubusercontent.com/u/1?v=4",
-    username: "mojombo",
-    createdAt: "2007-10-20T05:24:19Z",
-    bio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque libero sequi similique beatae asperiores natus dignissimos quia excepturi iste expedita?",
-    publicRepos: 61,
-    followers: 23200,
-    following: 0,
+  const fetchUser = async () => {
+    try {
+      const response = await fetch(`https://api.github.com/users/${username}`);
+      if (!response.ok) {
+        // If the response is not ok, throw an error to be caught below
+        throw new Error('User not found');
+      }
+      const jsonData = await response.json();
+      setData({
+        image: jsonData.avatar_url,
+        username: jsonData.login,
+        createdAt: jsonData.created_at,
+        bio: jsonData.bio,
+        publicRepos: jsonData.public_repos,
+        followers: jsonData.followers,
+        following: jsonData.following,
+      });
+    } catch (err) {
+      console.error(err);
+      setData(null); 
+    }
   };
 
   return (
