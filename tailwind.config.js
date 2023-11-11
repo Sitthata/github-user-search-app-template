@@ -11,7 +11,7 @@ export default {
           100: "#1F2A48",
           200: "#141C2F",
         },
-        utility: "0079FE",
+        utility: "rgb(0,121,254)",
       },
     },
   },

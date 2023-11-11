@@ -15,10 +15,14 @@ function App() {
     image: "https://avatars.githubusercontent.com/u/1?v=4",
     username: "mojombo",
     createdAt: "2007-10-20T05:24:19Z",
+    bio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque libero sequi similique beatae asperiores natus dignissimos quia excepturi iste expedita?",
+    publicRepos: 61,
+    followers: 23200,
+    following: 0,
   };
 
   return (
-    <section className="w-screen min-h-screen mx-auto font-mono text-white">
+    <section className="font-mono text-white">
       <div className="flex flex-col gap-10 px-5 mt-5 sm:mx-auto sm:max-w-[40rem]">
         <NavBar />
         <div className="flex flex-col gap-4">
