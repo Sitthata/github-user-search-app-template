@@ -2,8 +2,10 @@
 
 ---
 
-Before we get started, download the starter template from the branch `template-start`.
-<br/>
+Before we get started, download the starter template from the branch `template-start`. I suggested you to visit the final product to get the overview of this project.
+ [Live Version Here](https://devfinder-template.vercel.app/)
+
+
 ### [GITHUB API DOCUMENT](https://docs.github.com/en/free-pro-team@latest/rest/users/users?apiVersion=2022-11-28#get-a-user)
 In this practice workshop we'll learn how to fetch the data using GitHub API. we'll use this endpoint `https://api.github.com/users/${username}` and get the sample data like this
 <br/>
